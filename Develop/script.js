@@ -4,9 +4,17 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialcharacters = "!@#$%^&*(){}[]/><;:?";
 var numerics = "01234456789";
-var passwordlength = ">=8 && <= 128"
-function generatePassword() {
+// var passwordlength = "length";
+
+function generatePassword(length){
+  for (var i = 0; i < length; i++)
+ function generatePassword() 
+  
+  // {
+  
   var savedPassword = ""
+  
+  
   var userLength = window.prompt
     ("Please pick amount of characters between 8 and 128")
   if (userLength >= 8 && userLength <= 128) {
@@ -16,8 +24,10 @@ function generatePassword() {
 
     var isSpecialCharacters = window.confirm("include Special Characters")
     var isUpperCase = window.confirm("Include upper case letters")
-    for (var i = 0; i <= passwordlength; i++) { var randomIndex = Math.floor(Math.random() * passwordlength.length)
-      savedPassword = savedPassword + passwrodlength[randomIndex] }
+    for (var i = 0; i <= passwordlength; i++) {
+      var randomIndex = Math.floor(Math.random() * passwordlength.length)
+      savedPassword = savedPassword + passwrodlength[randomIndex]
+    }
 
     if (isSpecialCharacters === true) {
       var randomIndex = Math.floor(Math.random() * specialcharacters.length)
