@@ -49,53 +49,62 @@ function generatePassword() {
       return ""
     }
 
-    let finalPassword = ""
-    for (let i = 0; i < keyLength; i++) {
-      let rng = [Math.floor(Math.random() * multiSelect.length)];}
-      //  for (let i = 0; i < characterAmount; i++) {
-      // var randomIndex = Math.floor(Math.random() * userLength.length)
-      // savedPassword = savedPassword + userLength[randomIndex]}
-
-    } else {
-      window.alert("Invalid outside of range")
-    }
-
-    return savedPassword;
+    for (var i = 0; i < userLength + UpperCase + LowerCase + Numerics + SpecialCharacters.length; i++) { 
+      console.log( savedPassword + userLength[i] + ".");}
 
 
 
+    // for (let i = 0; i < userLength; i++) {
+    //   var random = Math.floor(Math.random() * userLength)
+    //    savedPassword = savedPassword + userLength[randomIndex]
+    // }
+    // let savedPassword = ""
+    // for (let i = 0; i < userLength; i++) {
+    //  let rng = [Math.floor(Math.random() * userLength.length)];}
+    //  for (let i = 0; i < characterAmount; i++) {
+    // var randomIndex = Math.floor(Math.random() * userLength.length)
+    // savedPassword = savedPassword + userLength[randomIndex]}
 
-    console.log(isUpperCase)
-
-    console.log(isSpecialCharacters)
-
-    console.log(isNumeric)
-
-    console.log(isLowerCase)
-
-
-    console.log(userLength)
-
-
-
-    // var password = generatePassword(passwordLength);
-    // console.log('Generated Password:', password);
-
-
-
-
-
-
-
-  }
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    var userlength = 8;
-    passwordText.value = password;
-
+  } else {
+    window.alert("Invalid outside of range")
   }
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  return savedPassword;
+
+
+
+
+  console.log(isUpperCase)
+
+  console.log(isSpecialCharacters)
+
+  console.log(isNumeric)
+
+  console.log(isLowerCase)
+
+
+  // console.log(userLength)
+
+
+
+  // var password = generatePassword(passwordLength);
+  // console.log('Generated Password:', password);
+
+
+
+
+
+
+
+}
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  var userlength = 8;
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
