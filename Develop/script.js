@@ -11,7 +11,11 @@ function generatePassword() {
 
 
   var savedPassword = ""
+  // create an array to randomly choose from the variables and also loop
 
+  // const password = [uppercase, lowercase, specialcharacters, numerics, userLength];
+  // document.getElementById('generate').addEventListener('click', function)
+  // { alert(generatePassword()); }
 
   var userLength = window.prompt
     ("Please pick amount of characters between 8 and 128")
@@ -22,35 +26,36 @@ function generatePassword() {
 
     var isSpecialCharacters = window.confirm("include Special Characters")
     var isUpperCase = window.confirm("Include upper case letters")
-    // for (var i = 0; i <= passwordlength; i++) {
-    //   var randomIndex = Math.floor(Math.random() * passwordlength.length)
-    //   savedPassword = savedPassword + passwrodlength[randomIndex]
-    // // }
+    for (var i = 0; i <= userLength; i++) {
+      //   var randomIndex = Math.floor(Math.random() * passwordlength.length)
+      //   savedPassword = savedPassword + passwrodlength[randomIndex]
+      // // }
 
-    if (isSpecialCharacters === true) {
-      var randomIndex = Math.floor(Math.random() * specialcharacters.length)
-      savedPassword = savedPassword + specialcharacters[randomIndex]
-    }
-    if (isNumeric === true) {
-      var randomIndex = Math.floor(Math.random() * numerics.length)
-      savedPassword = savedPassword + numerics[randomIndex]
-    }
-    if (isLowerCase === true) {
-      var randomIndex = Math.floor(Math.random() * lowercase.length)
-      savedPassword = savedPassword + lowercase[randomIndex]
+      if (isSpecialCharacters === true && savedPassword.length < userLength) {
+        var randomIndex = Math.floor(Math.random() * specialcharacters.length)
+        savedPassword = savedPassword + specialcharacters[randomIndex]
+      }
+      if (isNumeric === true && savedPassword.length < userLength) {
+        var randomIndex = Math.floor(Math.random() * numerics.length)
+        savedPassword = savedPassword + numerics[randomIndex]
+      }
+      if (isLowerCase === true && savedPassword.length < userLength ) {
+        var randomIndex = Math.floor(Math.random() * lowercase.length)
+        savedPassword = savedPassword + lowercase[randomIndex]
+      }
+
+      if (isUpperCase === true && savedPassword.length < userLength) {
+        var randomIndex = Math.floor(Math.random() * uppercase.length)
+        savedPassword = savedPassword + uppercase[randomIndex]
+      }
+      if (isLowerCase == false && isNumeric == false && isSpecialCharacters == false && isUpperCase == false) {
+        window.alert("Must pick at least one element")
+        return ""
+      }
     }
 
-    if (isUpperCase === true) {
-      var randomIndex = Math.floor(Math.random() * uppercase.length)
-      savedPassword = savedPassword + uppercase[randomIndex]
-    }
-    if (isLowerCase == false && isNumeric == false && isSpecialCharacters == false && isUpperCase == false) {
-      window.alert("Must pick at least one element")
-      return ""
-    }
-
-    for (var i = 0; i < userLength + UpperCase + LowerCase + Numerics + SpecialCharacters.length; i++) { 
-      console.log( savedPassword + userLength[i] + ".");}
+    // for (var i = 0; i < userLength + UpperCase + LowerCase + Numerics + SpecialCharacters.length; i++) { 
+    //   console.log( savedPassword + userLength[i] + ".");}
 
 
 
